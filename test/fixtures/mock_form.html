@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Apply</title>
+<style>.hidden{display:none} .menu{border:1px solid #ccc} .field{margin:8px}</style></head>
+<body>
+<h1>Data Analyst Intern</h1>
+<form id="app">
+  <div class="field"><label for="first_name">First Name<span>*</span></label><input id="first_name" required></div>
+  <div class="field"><label for="last_name">Last Name<span>*</span></label><input id="last_name" required></div>
+  <div class="field"><label for="email">Email<span>*</span></label><input id="email" type="email" required></div>
+  <div class="field"><label for="phone">Phone<span>*</span></label><input id="phone" type="tel" required></div>
+  <div class="field"><label for="country">Country<span>*</span></label>
+    <input id="country" role="combobox" aria-required="true" autocomplete="off">
+    <div id="country_menu" class="menu hidden" role="listbox"></div></div>
+  <div class="field"><label>Resume/CV<span>*</span></label><button type="button">Attach</button><input id="resume" type="file" class="hidden" required></div>
+  <div class="field"><label>Cover Letter</label><button type="button">Attach</button><input id="cover_letter" type="file" class="hidden"></div>
+  <div class="field"><label for="q_linkedin">LinkedIn Profile</label><input id="q_linkedin"></div>
+  <div class="field"><label for="q_auth">Are you legally authorized to work in Canada?<span>*</span></label>
+    <select id="q_auth" required><option value="">Select...</option><option>Yes</option><option>No</option></select></div>
+  <fieldset class="field"><legend>Are you currently a student?*</legend>
+    <label><input type="radio" name="student" value="y" required> Yes</label>
+    <label><input type="radio" name="student" value="n"> No</label></fieldset>
+  <div class="field"><label for="q_why">Why do you want to work at Mockly?<span>*</span></label><textarea id="q_why" required></textarea></div>
+  <div class="field"><label for="q_gender">Gender (voluntary)</label>
+    <select id="q_gender"><option value="">Select...</option><option>Woman</option><option>Man</option><option>Decline to self-identify</option></select></div>
+  <div class="field"><label><input type="checkbox" id="consent" required> I agree to the privacy policy*</label></div>
+  <button type="submit">Submit application</button>
+</form>
+<script>
+  // A small custom dropdown like Greenhouse's: options appear only when opened.
+  const countries = ["Canada", "United States", "United Kingdom"];
+  const input = document.getElementById("country"), menu = document.getElementById("country_menu");
+  let chosen = "";
+  function render(filter) {
+    menu.innerHTML = countries.filter(c => c.toLowerCase().includes((filter||"").toLowerCase()))
+      .map(c => `<div role="option">${c}</div>`).join("");
+    menu.classList.remove("hidden");
+  }
+  input.addEventListener("click", () => render(input.value));
+  input.addEventListener("input", () => { chosen = ""; render(input.value); });
+  input.addEventListener("keydown", e => { if (e.key === "Escape") menu.classList.add("hidden"); });
+  menu.addEventListener("click", e => { if (e.target.getAttribute("role") === "option") { chosen = e.target.textContent; input.value = chosen; menu.classList.add("hidden"); } });
+  document.getElementById("app").addEventListener("submit", e => {
+    e.preventDefault();
+    const f = id => document.getElementById(id);
+    window.__submitted = {
+      first: f("first_name").value, last: f("last_name").value, email: f("email").value, phone: f("phone").value,
+      country: chosen, resume: f("resume").files[0]?.name || "", cover: f("cover_letter").files[0]?.name || "",
+      auth: f("q_auth").value, student: document.querySelector("input[name=student]:checked")?.value || "",
+      why: f("q_why").value, gender: f("q_gender").value, consent: f("consent").checked,
+    };
+    if (!chosen || !window.__submitted.resume) { document.body.insertAdjacentHTML("beforeend", '<div class="error">Country and resume are required</div>'); return; }
+    document.body.innerHTML = location.hash === "#code"
+      ? "<h2>Enter the security code we emailed you</h2><input>"
+      : "<h2>Thank you for applying!</h2><pre>" + JSON.stringify(window.__submitted) + "</pre>";
+  });
+</script>
+</body></html>

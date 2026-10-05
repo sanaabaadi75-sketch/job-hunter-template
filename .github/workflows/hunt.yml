@@ -1,0 +1,79 @@
+# Runs the job hunter on GitHub's servers on a schedule, so it keeps going
+# while your laptop is off.
+#
+# Secrets it needs (repository Settings > Secrets and variables > Actions):
+#   CLAUDE_CODE_OAUTH_TOKEN  from running `claude setup-token` (uses your Pro plan)
+#   GMAIL_USER               your Gmail address
+#   GMAIL_APP_PASSWORD       the Gmail app password
+#
+# Each run saves data/ (which jobs were handled, who was emailed) back to the
+# repository, and the documents it wrote as a downloadable "applications" file.
+
+name: Job hunter
+
+on:
+  schedule:
+    - cron: "17 */2 * * *" # every 2 hours (UTC), at 17 minutes past
+  workflow_dispatch: {} # "Run workflow" button on the Actions page
+
+concurrency:
+  group: job-hunter # never run two hunts at once
+  cancel-in-progress: false
+
+permissions:
+  contents: write # to save data/ back to the repository
+
+jobs:
+  hunt:
+    # Scheduled runs stay off until you add the repository variable HUNT_ENABLED = true
+    # (Settings > Secrets and variables > Actions > Variables). The Run workflow button always works.
+    if: github.event_name == 'workflow_dispatch' || vars.HUNT_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          npm install -g @anthropic-ai/claude-code
+
+      - name: Check Claude login (manual runs only)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: echo "Reply with the single word OK." | claude -p --model haiku
+
+      - name: Hunt
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: node src/hunt.js
+
+      - name: Show the report on the run page
+        if: always()
+        run: cat applications/hunt_report_*.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo "No report this run." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save history
+        if: always()
+        run: |
+          git config user.name "job-hunter-bot"
+          git config user.email "job-hunter-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || (git commit -m "Hunt run $(date -u +%Y-%m-%dT%H:%MZ)" && git push)
+
+      - name: Keep the documents
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: applications-${{ github.run_number }}
+          path: applications/
+          if-no-files-found: ignore
+          retention-days: 90

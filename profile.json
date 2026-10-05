@@ -1,0 +1,144 @@
+{
+  "_readme": "This is your master profile. The agent may ONLY use facts written here, so keep it complete and true. Add new projects, jobs and skills as you gain them. Anything you add to 'unverified' is never used. EVERYTHING BELOW IS AN EXAMPLE PERSON: replace it all with your own details before running.",
+  "name": "Alex Example",
+  "contact": {
+    "location": "Kingston, ON",
+    "phone": "(555) 555-0100",
+    "email": "alex.example@example.com",
+    "links": [
+      "https://www.linkedin.com/in/alex-example/"
+    ]
+  },
+  "career_goal": "Data analytics and software development roles.",
+  "education": [
+    {
+      "title": "Advanced Diploma, Computer Programming and Analysis",
+      "organization": "St. Lawrence College, Kingston, ON",
+      "date": "Expected April 2028",
+      "facts": [
+        "First year GPA 3.50",
+        "Coursework completed: C++, C#, web programming (HTML, CSS, JavaScript, MongoDB, Express), AWS networking, professional development"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Google Data Analytics Professional Certificate",
+      "organization": "Coursera",
+      "date": "2023",
+      "facts": [
+        "Trained in spreadsheets, SQL, R, Tableau and BigQuery",
+        "Covers the full analysis process: ask, prepare, process, analyze, share, act"
+      ]
+    }
+  ],
+  "skills": {
+    "data": [
+      "SQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Excel",
+      "Google Sheets",
+      "R",
+      "Tableau",
+      "BigQuery",
+      "data cleaning and validation"
+    ],
+    "programming": [
+      "Python",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "React",
+      "C#",
+      "C++",
+      "Java",
+      "HTML",
+      "CSS"
+    ],
+    "tools_and_cloud": [
+      "AWS",
+      "Google Cloud",
+      "Git",
+      "GitHub"
+    ],
+    "office": [
+      "Word",
+      "Excel",
+      "PowerPoint",
+      "Outlook"
+    ],
+    "soft": [
+      "Works independently",
+      "Explains technical issues in plain language",
+      "Attention to detail"
+    ]
+  },
+  "projects": [
+    {
+      "title": "Campus Transit Dashboard",
+      "role": "Personal Project",
+      "date": "Ongoing",
+      "facts": [
+        "Collects public bus schedule data and cleans it into one structured PostgreSQL dataset",
+        "Designed the PostgreSQL data model",
+        "Built a React dashboard for exploring delays by route and time of day"
+      ]
+    },
+    {
+      "title": "Club Inventory Tracker",
+      "role": "Course Project",
+      "date": "Completed",
+      "facts": [
+        "Full stack inventory app built with Node.js, Express and MongoDB",
+        "Role based access control",
+        "Excel bulk import of existing records"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Sales Associate",
+      "organization": "Example Retail, Kingston, ON",
+      "date": "2024 to 2025",
+      "facts": [
+        "Processed purchases, returns and inquiries on a POS system",
+        "Balanced cash drawers daily",
+        "Kept merchandise displays organized and stocked",
+        "Helped customers with product selection"
+      ]
+    }
+  ],
+  "application_answers": {
+    "_readme": "Answers for application forms. The agent uses these word for word. Anything left as null is treated as unknown, and any job that REQUIRES that answer is skipped and listed in the report for you to finish by hand. Fill these in to let more applications go through automatically.",
+    "first_name": "Alex",
+    "last_name": "Example",
+    "preferred_name": "Alex",
+    "email": "alex.example@example.com",
+    "phone": "(555) 555-0100",
+    "city": "Kingston",
+    "province": "Ontario",
+    "country": "Canada",
+    "postal_code": null,
+    "linkedin_url": "https://www.linkedin.com/in/alex-example/",
+    "github_url": null,
+    "portfolio_url": null,
+    "legally_authorized_to_work_in_canada": null,
+    "requires_visa_sponsorship_now_or_future": null,
+    "legally_authorized_to_work_in_us": null,
+    "willing_to_relocate": null,
+    "open_to_hybrid_or_in_office": null,
+    "earliest_start_date": null,
+    "salary_expectation": null,
+    "currently_a_student": "Yes, full time at St. Lawrence College, expected graduation April 2028",
+    "highest_education": "Advanced Diploma in progress (Computer Programming and Analysis)",
+    "years_of_professional_experience_in_field": "Less than 1 year",
+    "how_did_you_hear_about_us": "Company careers page",
+    "previously_worked_for_this_company": "No",
+    "voluntary_demographic_questions": "Decline to self-identify / prefer not to say",
+    "consent_to_privacy_policy_and_data_processing": "Yes",
+    "certify_information_is_true": "Yes",
+    "languages": "English (fluent)"
+  },
+  "unverified": []
+}

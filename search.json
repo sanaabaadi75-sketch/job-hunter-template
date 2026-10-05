@@ -1,0 +1,271 @@
+{
+  "_readme": "Settings for the job hunter. Edit job types, places and companies here. See README for how to find a company's board name. Job Bank: companies.jobbank holds Job Bank city ids (Kingston, ON is 22403); its jobs match the local_kingston job type. More sources: jobbank \"remote\" (remote jobs across Canada), njoyn/successfactors/slc (Kingston employers, listed for you to apply), remotive/himalayas (remote job sites).",
+  "job_types": {
+    "data_analyst": [
+      "data analyst",
+      "business analyst",
+      "business intelligence",
+      "bi analyst",
+      "reporting analyst",
+      "analytics analyst",
+      "data specialist",
+      "insights analyst",
+      "junior analyst"
+    ],
+    "internship_coop": [
+      "intern",
+      "internship",
+      "co-op",
+      "coop",
+      "co op",
+      "student",
+      "new grad"
+    ],
+    "junior_developer": [
+      "junior developer",
+      "junior software",
+      "software developer",
+      "software engineer i",
+      "web developer",
+      "full stack developer",
+      "fullstack developer",
+      "frontend developer",
+      "front end developer",
+      "javascript developer",
+      "associate software",
+      "entry level",
+      "software engineer",
+      "full stack",
+      "fullstack",
+      "backend developer",
+      "back end developer",
+      "python developer",
+      "react developer",
+      "node developer",
+      "data engineer intern",
+      "application developer",
+      "programmer"
+    ],
+    "part_time_remote": [
+      "part-time",
+      "part time",
+      "contract",
+      "data annotator",
+      "data annotation",
+      "ai trainer"
+    ],
+    "local_kingston": [
+      "retail sales",
+      "sales associate",
+      "retail associate",
+      "cashier",
+      "store clerk",
+      "customer service",
+      "key holder",
+      "receptionist",
+      "front desk",
+      "administrative assistant",
+      "office assistant",
+      "office clerk",
+      "general office",
+      "data entry",
+      "clerk",
+      "computer technician",
+      "computer repair",
+      "computer service",
+      "it support",
+      "help desk",
+      "technical support",
+      "desktop support",
+      "cook",
+      "line cook",
+      "kitchen helper",
+      "kitchen assistant",
+      "food service",
+      "food counter",
+      "baker",
+      "pastry",
+      "barista",
+      "server",
+      "stock clerk",
+      "shelf stocker",
+      "warehouse",
+      "tutor"
+    ]
+  },
+  "exclude_title_words": [
+    "senior",
+    "sr",
+    "staff",
+    "principal",
+    "lead",
+    "manager",
+    "director",
+    "head of",
+    "vp",
+    "vice president",
+    "architect",
+    "chief",
+    "ii",
+    "iii",
+    "iv",
+    "expert",
+    "cleaner",
+    "cleaning",
+    "janitor",
+    "custodian",
+    "housekeeping",
+    "housekeeper",
+    "room attendant",
+    "nurse",
+    "rn",
+    "rpn",
+    "physician",
+    "pharmacist",
+    "therapist",
+    "technologist",
+    "articling",
+    "psychologist",
+    "dietitian",
+    "paramedic",
+    "lawyer",
+    "physiotherapist",
+    "surgeon",
+    "dentist",
+    "midwife",
+    "faculty",
+    "professor",
+    "environmental services"
+  ],
+  "location_must_match": [
+    "canada",
+    "ontario",
+    "toronto",
+    "kingston",
+    "ottawa",
+    "waterloo",
+    "kitchener",
+    "montreal",
+    "vancouver",
+    "calgary",
+    "north america",
+    ", on",
+    "gananoque",
+    "napanee",
+    "amherstview",
+    "odessa",
+    "bath",
+    "sydenham",
+    "harrowsmith",
+    "inverary",
+    "wolfe island"
+  ],
+  "companies": {
+    "greenhouse": [
+      "instacart",
+      "faire",
+      "affirm",
+      "dropbox",
+      "airtable",
+      "ritual",
+      "hootsuite",
+      "d2l",
+      "asana",
+      "twilio",
+      "geotab",
+      "figma",
+      "reddit",
+      "brex",
+      "pinterest",
+      "robinhood",
+      "coinbase",
+      "gitlab",
+      "okta",
+      "samsara",
+      "stripe",
+      "datadog",
+      "mongodb",
+      "zscaler",
+      "cloudflare",
+      "elastic",
+      "databricks"
+    ],
+    "lever": [
+      "fullscript",
+      "palantir"
+    ],
+    "ashby": [
+      "cohere",
+      "wealthsimple",
+      "1password",
+      "koho",
+      "clerk",
+      "linear",
+      "hopper",
+      "modal",
+      "sanity",
+      "supabase",
+      "writer",
+      "jobber",
+      "replit",
+      "cursor",
+      "perplexity",
+      "plaid",
+      "notion",
+      "ramp",
+      "snowflake",
+      "openai"
+    ],
+    "jobbank": [
+      "22403",
+      "remote"
+    ],
+    "njoyn": [
+      {
+        "name": "Queen's University",
+        "feed": "https://clients.njoyn.com/CL4/net/ResumeProcessing/RssFeedOutput.aspx?CLID=74827&lang=1"
+      },
+      {
+        "name": "City of Kingston",
+        "feed": "https://careers.cityofkingston.ca/CL2/net/ResumeProcessing/RssFeedOutput.aspx?CLID=61577&lang=1"
+      }
+    ],
+    "successfactors": [
+      {
+        "name": "Kingston Health Sciences Centre",
+        "company": "KGH",
+        "host": "career5.successfactors.eu"
+      }
+    ],
+    "slc": [
+      {
+        "name": "St. Lawrence College",
+        "page": "https://www.stlawrencecollege.ca/about/careers-at-slc/current-job-opportunities"
+      }
+    ],
+    "remotive": [
+      "data",
+      "software-dev"
+    ],
+    "himalayas": [
+      "data analyst",
+      "junior developer",
+      "junior software engineer",
+      "data entry",
+      "IT support",
+      "web developer"
+    ],
+    "linkedin_alerts": [
+      {
+        "name": "LinkedIn alerts",
+        "days": 3
+      }
+    ]
+  },
+  "apply_when_fit": [
+    "strong match",
+    "possible",
+    "long shot"
+  ],
+  "max_jobs_per_run": 10
+}

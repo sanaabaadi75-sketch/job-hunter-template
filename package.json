@@ -1,0 +1,27 @@
+{
+  "name": "job-agent",
+  "version": "1.0.0",
+  "description": "Job hunter and resume tailor: finds jobs, tailors your resume and cover letter, and applies",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/test.js",
+    "hunt": "node src/hunt.js",
+    "test:apply": "node test/apply.test.js",
+    "test:hunt": "node test/hunt.test.js",
+    "test:all": "npm test && npm run test:apply && npm run test:hunt",
+    "send-emails": "node src/sendEmails.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docx": "^9.8.1",
+    "imapflow": "^2.2.4",
+    "mailparser": "^3.9.34",
+    "nodemailer": "^10.0.14",
+    "playwright": "^1.63.0"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}

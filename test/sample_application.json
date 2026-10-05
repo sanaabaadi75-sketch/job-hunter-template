@@ -1,0 +1,48 @@
+{
+  "company": "Instacart",
+  "job_title": "Data Analyst, Platform Excellence Ops Analytics",
+  "resume": {
+    "summary": "Computer Programming and Analysis student with a Google Data Analytics Certificate and hands on experience collecting, cleaning, and structuring real world data. Builds database backed applications and is comfortable working independently from a messy raw dataset to a clear, usable answer.",
+    "skills": [
+      { "label": "Data and Analytics", "value": "SQL, PostgreSQL, MongoDB, Excel, Google Sheets, R, Tableau, BigQuery, data cleaning and validation" },
+      { "label": "Programming", "value": "Python, JavaScript, Node.js, Express, React, C#, C++, Java" },
+      { "label": "Tools and Platforms", "value": "AWS, Google Cloud, Git, GitHub, PowerPoint" }
+    ],
+    "sections": [
+      { "heading": "Data and Software Projects", "entries": [
+        { "title": "Campus Transit Dashboard", "subtitle": "Personal Project", "date": "Ongoing", "bullets": [
+          "Collect public bus schedule data and clean it into one structured PostgreSQL dataset",
+          "Designed the PostgreSQL data model and built a React dashboard for exploring delays by route"] },
+        { "title": "Club Inventory Tracker", "subtitle": "Course Project", "date": "Completed", "bullets": [
+          "Built a full stack inventory app with Node.js, Express and MongoDB with role based access",
+          "Created an Excel bulk import of existing records"] }
+      ]},
+      { "heading": "Education and Certification", "entries": [
+        { "title": "Advanced Diploma, Computer Programming and Analysis", "subtitle": "St. Lawrence College", "date": "Expected April 2028", "bullets": ["First year GPA 3.50"] },
+        { "title": "Google Data Analytics Professional Certificate", "subtitle": "Coursera", "date": "2023", "bullets": ["Spreadsheets, SQL, R, Tableau, and the full analysis process"] }
+      ]},
+      { "heading": "Experience", "entries": [
+        { "title": "Sales Associate", "subtitle": "Example Retail, Kingston, ON", "date": "2024 to 2025", "bullets": [
+          "Processed sales and returns on a POS system and balanced cash drawers daily",
+          "Kept merchandise displays organized and helped customers choose products"] }
+      ]}
+    ]
+  },
+  "cover_letter": {
+    "recipient_lines": ["Hiring Team, Platform Excellence Operations Analytics", "Instacart"],
+    "subject": "Re: Data Analyst, Platform Excellence Ops Analytics",
+    "greeting": "Dear Hiring Team,",
+    "paragraphs": [
+      "I am applying for the Data Analyst role on the Platform Excellence Operations Analytics team.",
+      "Most of my data experience comes from projects where nobody handed me a clean table.",
+      "I would welcome the chance to discuss how I could contribute. Thank you for your time."
+    ]
+  },
+  "fit_assessment": {
+    "verdict": "long shot",
+    "reasoning": "The role needs one year of professional analytics experience and advanced SQL, and it is full time while you study full time.",
+    "matched": ["Ontario resident, remote role open to ON", "Data cleaning experience", "Retail operations exposure"],
+    "gaps": ["1+ years professional analytics", "Advanced SQL shown in a project"],
+    "suggestions": ["Add a SQL analysis project using your transit dataset", "Target data analyst internships and co ops"]
+  }
+}

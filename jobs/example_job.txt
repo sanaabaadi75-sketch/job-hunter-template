@@ -1,0 +1,2 @@
+Paste a full job description here (title, company, responsibilities, qualifications),
+then run:  npm start -- --file jobs/example_job.txt
