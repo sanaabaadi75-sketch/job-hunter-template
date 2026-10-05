@@ -8,7 +8,7 @@
 4. Follow [Setup](#setup-one-time) below, then do a dry run of the [job hunter](#job-hunter) before letting it submit anything.
 5. Optional: to run it on GitHub every 2 hours, add the secrets listed at the top of `.github/workflows/hunt.yml`. Then add a repository **variable** named `HUNT_ENABLED` set to `true`. Until you add that variable, only the manual **Run workflow** button works.
 
-Want to improve the tool for everyone? Open an issue or a pull request on this template repo. Keep your own data out of pull requests.
+Want to improve the tool for everyone? See [CONTRIBUTING.md](CONTRIBUTING.md). This project was built with Claude (Claude Code) as a coding partner.
 
 Two tools in one project:
 
